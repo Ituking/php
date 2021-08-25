@@ -6,25 +6,28 @@
     $language = ["PHP", "Python", "JAVA", "HTML"];
     $command = ["join", "select", "insert", "update"];
 //② ①で作成した、配列から正解の選択肢の変数を作成してください
-    $what_number_answer = 80;
-    $language_answer = "HTML";
-    $command_answer = "select";
+    $what_number_correct = 80;
+    $language_correct = "HTML";
+    $command_correct = "select";
 ?>
 <p>お疲れ様です<!--POST通信で送られてきた名前を出力--><?php echo $my_name ?>さん</p>
 <!--フォームの作成 通信はPOST通信で-->
 <h2>①ネットワークのポート番号は何番？</h2>
 <!--③ 問題のradioボタンを「foreach」を使って作成する-->
-<?php foreach($what_number as $what_number_answer): ?>
-    <input type="radio" value="">
+<?php foreach($what_number as $what_number_correct): ?>
+    <input type="radio" name="port" value=""><?php echo $what_number_correct; ?>
 <?php endforeach ?>
 <h2>②Webページを作成するための言語は？</h2>
 <!--③ 問題のradioボタンを「foreach」を使って作成する-->
-<?php foreach($language as $language_answer): ?>
-    <input type="radio" value="">
+<?php foreach($language as $language_correct): ?>
+    <input type="radio" name="languager" value=""><?php echo $language_correct; ?>
 <?php endforeach ?>
 <h2>③MySQLで情報を取得するためのコマンドは？</h2>
 <!--③ 問題のradioボタンを「foreach」を使って作成する-->
-<?php foreach($command as $command_answer): ?>
-    <input type="radio" value="">
+<?php foreach($command as $command_correct): ?>
+    <input type="radio" name="command" value=""><?php echo $command_correct; ?>
 <?php endforeach ?>
 <!--問題の正解の変数と名前の変数を[answer.php]に送る-->
+<form action="answer.php" name="correct" method="post">
+    <button type="submit">回答する</button>
+</form> 
