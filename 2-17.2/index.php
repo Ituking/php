@@ -1,4 +1,6 @@
-<?php
+<?php 
+    //タイムゾーンを日本時間に設定
+    date_default_timezone_set("Asia/Tokyo");
     $hour = date("H" ,time());
     if ($hour >= 0 && $hour <= 12) {
         echo "今".$hour."時台です";
