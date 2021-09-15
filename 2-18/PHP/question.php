@@ -28,9 +28,9 @@
     <input type="radio" name="command" value="$command as $command_correct"><?php echo $command_correct; ?>
 <?php endforeach ?>
 <!--問題の正解の変数と名前の変数を[answer.php]に送る-->
-<form action="answer.php" name="correct" method="post">
+<form action="answer.php" name="correct" method="POST">
     <button type="submit">回答する</button>
 </form>
-<form action="answer.php" method="post">
-    <input type="hidden" name="my_name" value="$my_name">
+<form action="answer.php" method="POST">
+    <input type="hidden" name="my_name" value="<?php echo $my_name; ?>">
 </form> 
