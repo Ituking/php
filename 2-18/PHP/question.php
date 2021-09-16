@@ -10,7 +10,9 @@
     $language_correct = "HTML";
     $command_correct = "select";
 ?>
-<p>お疲れ様です<!--POST通信で送られてきた名前を出力--><?php echo $my_name ?>さん</p>
+<form action="answer.php" method="POST">
+    <p>お疲れ様です<!--POST通信で送られてきた名前を出力--><input type="hidden" name="my_name" value="<?php echo $my_name; ?>">さん</p>
+</form>
 <!--フォームの作成 通信はPOST通信で-->
 <h2>①ネットワークのポート番号は何番？</h2>
 <!--③ 問題のradioボタンを「foreach」を使って作成する-->
@@ -31,6 +33,3 @@
 <form action="answer.php" name="correct" method="POST">
     <button type="submit">回答する</button>
 </form>
-<form action="answer.php" method="POST">
-    <input type="hidden" name="my_name" value="<?php echo $my_name; ?>">
-</form> 
