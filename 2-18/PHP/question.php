@@ -11,7 +11,7 @@
     $command_correct = "select";
 ?>
 <form action="answer.php" method="POST">
-    <p>お疲れ様です<!--POST通信で送られてきた名前を出力--><input type="hidden" name="my_name" value="<?php echo $my_name; ?>">さん</p>
+    <p>お疲れ様です<!--POST通信で送られてきた名前を出力--><?php echo $_POST["my_name"]; ?><input type="hidden" name="my_name" value="<?php echo $my_name; ?>">さん</p>
 <!--フォームの作成 通信はPOST通信で-->
 <h2>①ネットワークのポート番号は何番？</h2> 
 <!--③ 問題のradioボタンを「foreach」を使って作成する-->
