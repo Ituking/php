@@ -12,24 +12,22 @@
 ?>
 <form action="answer.php" method="POST">
     <p>お疲れ様です<!--POST通信で送られてきた名前を出力--><input type="hidden" name="my_name" value="<?php echo $my_name; ?>">さん</p>
-</form>
 <!--フォームの作成 通信はPOST通信で-->
-<h2>①ネットワークのポート番号は何番？</h2>
+<h2>①ネットワークのポート番号は何番？</h2> 
 <!--③ 問題のradioボタンを「foreach」を使って作成する-->
 <?php foreach($what_number as $what_number_correct): ?>
-    <input type="radio" name="port" value="$what_number as $what_number_correct"><?php echo $what_number_correct; ?>
+    <input type="radio" name="port" value="$what_number as $what_number_correct"><?php echo $what_number_correct; ?>   
 <?php endforeach ?>
 <h2>②Webページを作成するための言語は？</h2>
 <!--③ 問題のradioボタンを「foreach」を使って作成する-->
 <?php foreach($language as $language_correct): ?>
-    <input type="radio" name="language" value="$language as $language_correct"><?php echo $language_correct; ?>
+    <input type="radio" name="language" value="$language as $language_correct"><?php echo $language_correct; ?>  
 <?php endforeach ?>
 <h2>③MySQLで情報を取得するためのコマンドは？</h2>
 <!--③ 問題のradioボタンを「foreach」を使って作成する-->
 <?php foreach($command as $command_correct): ?>
-    <input type="radio" name="command" value="$command as $command_correct"><?php echo $command_correct; ?>
-<?php endforeach ?>
+    <input type="radio" name="foreach" value="$command as $command_correct"><?php echo $command_correct; ?>  
+<?php endforeach ?><br>
 <!--問題の正解の変数と名前の変数を[answer.php]に送る-->
-<form action="answer.php" name="correct" method="POST">
     <button type="submit">回答する</button>
 </form>
