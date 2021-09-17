@@ -3,6 +3,9 @@
 $my_name = $_POST["my_name"];
 $selected_answer = $_POST["selected_answer"];
 $problem_correct = $_POST["problem_correct"];
+$what_number_correct = $_POST["what_number_correct"];
+$language_correct = $_POST["language_correct"];
+$command_correct = $_POST["command_correct"];
 //選択した回答と正解が一致していれば「正解！」、一致していなければ「残念・・・」と出力される処理を組んだ関数を作成する
 function result_display($selected_answer, $problem_correct) {
     if ($selected_answer == $problem_correct) {

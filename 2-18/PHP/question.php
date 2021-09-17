@@ -26,11 +26,11 @@
 <h2>③MySQLで情報を取得するためのコマンドは？</h2>
 <!--③ 問題のradioボタンを「foreach」を使って作成する-->
 <?php foreach($command as $command_correct): ?>
-    <input type="radio" name="foreach" value="$command as $command_correct"><?php echo $command_correct; ?>  
+    <input type="radio" name="command" value="$command as $command_correct"><?php echo $command_correct; ?>  
 <?php endforeach ?><br>
 <!--問題の正解の変数と名前の変数を[answer.php]に送る-->
     <button type="submit">回答する</button>
-    <input type="hidden" name="what_number_correct" value= "$what_number_correct">
-    <input type="hidden" name="language_correct" value="$language_correct">
-    <input type="hidden" name="command_correct" value="$command_correct">
+    <input type="hidden" name="what_number_correct" value="<?php echo $_POST["what_number_correct"]; ?>">
+    <input type="hidden" name="language_correct" value="<?php echo $_POST["language_correct"]; ?>">
+    <input type="hidden" name="command_correct" value="<?php echo $_POST["command_correct"]; ?>">
 </form>
