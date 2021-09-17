@@ -30,4 +30,7 @@
 <?php endforeach ?><br>
 <!--問題の正解の変数と名前の変数を[answer.php]に送る-->
     <button type="submit">回答する</button>
+    <input type="hidden" name="what_number_correct" value= "$what_number_correct">
+    <input type="hidden" name="language_correct" value="$language_correct">
+    <input type="hidden" name="command_correct" value="$command_correct">
 </form>
