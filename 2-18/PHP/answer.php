@@ -19,18 +19,15 @@ function result_display($selected_answer, $problem_correct) {
 <p>①の答え</p>
 <!--作成した関数を呼び出して結果を表示-->
 <?php 
-    $result1 = result_display($selected_answer, $problem_correct);
-    echo $result1;
+    result_display($selected_answer, $problem_correct);
 ?>
 <p>②の答え</p>
 <!--作成した関数を呼び出して結果を表示-->
 <?php
-    $result2 = result_display($selected_answer, $problem_correct);
-    echo $result2;
+    result_display($selected_answer, $problem_correct);
 ?>
 <p>③の答え</p>
 <!--作成した関数を呼び出して結果を表示-->
 <?php
-    $result3 = result_display($selected_answer, $problem_correct);
-    echo $result3;
+    result_display($selected_answer, $problem_correct);
 ?>
