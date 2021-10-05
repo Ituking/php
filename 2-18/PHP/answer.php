@@ -2,7 +2,7 @@
 //[question.php]から送られてきた名前の変数、選択した回答、問題の答えの変数を作成
 $my_name = $_POST["my_name"];
 $selected_answer = $_POST["selected_answer"];
-$port = $_POST["post"];
+$port = $_POST["port"];
 $language = $_POST["language"];
 $command = $_POST["command"];
 $problem_correct = $_POST["problem_correct"];

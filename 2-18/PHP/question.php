@@ -15,31 +15,22 @@
 <!--フォームの作成 通信はPOST通信で-->
 <h2>①ネットワークのポート番号は何番？</h2> 
 <!--③ 問題のradioボタンを「foreach」を使って作成する-->
-<?php foreach($what_number as $what_number_correct): ?>
-    <input type="radio" name="port" value="$what_number_correct"><?php echo $what_number_correct; ?>
+<?php foreach($what_number as $a): ?>
+    <input type="radio" name="port" value="<?php echo $a; ?>"><?php echo $a; ?>
 <?php endforeach ?>
 <h2>②Webページを作成するための言語は？</h2>
 <!--③ 問題のradioボタンを「foreach」を使って作成する-->
-<?php foreach($language as $language_correct): ?>
-    <input type="radio" name="language" value="$language_correct"><?php echo $language_correct; ?>
+<?php foreach($language as $b): ?>
+    <input type="radio" name="language" value="<?php echo $b; ?>"><?php echo $b; ?>
 <?php endforeach ?>
 <h2>③MySQLで情報を取得するためのコマンドは？</h2>
 <!--③ 問題のradioボタンを「foreach」を使って作成する-->
-<?php foreach($command as $command_correct): ?>
-    <input type="radio" name="command" value="$command_correct"><?php echo $command_correct ?>
+<?php foreach($command as $c): ?>
+    <input type="radio" name="command" value="<?php echo $c; ?>"><?php echo $c; ?>
 <?php endforeach ?><br>
 <!--問題の正解の変数と名前の変数を[answer.php]に送る-->
     <button type="submit">回答する</button>
-    <input type="hidden" name="what_number_correct" value="<?php echo $_POST["what_number_correct"]; ?>">
-    <?php
-        var_dump($what_number_correct);
-    ?>
-    <input type="hidden" name="language_correct" value="<?php echo $_POST["language_correct"]; ?>">
-    <?php
-        var_dump($language_correct);
-    ?>
-    <input type="hidden" name="command_correct" value="<?php echo $_POST["command_correct"]; ?>">
-    <?php
-        var_dump($command_correct);
-    ?>
+    <input type="hidden" name="what_number_correct" value="<?php echo $what_number_correct; ?>">
+    <input type="hidden" name="language_correct" value="<?php echo $language_correct; ?>">
+    <input type="hidden" name="command_correct" value="<?php echo $command_correct; ?>">
 </form>
