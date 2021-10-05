@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="CSS/style2.css">
 <?php
 //POST送信で送られてきた名前を受け取って変数を作成
     $my_name = $_POST["my_name"];
