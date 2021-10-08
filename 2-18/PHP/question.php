@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="CSS/style2.css">
 <?php
 //POST送信で送られてきた名前を受け取って変数を作成
     $my_name = $_POST["my_name"];
@@ -11,6 +10,16 @@
     $language_correct = "HTML";
     $command_correct = "select";
 ?>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>質問</title>
+    <link rel="stylesheet" href="CSS/question.css">
+</head>
+<body>
 <form action="answer.php" method="POST">
     <p>お疲れ様です<!--POST通信で送られてきた名前を出力--><?php echo $_POST["my_name"]; ?><input type="hidden" name="my_name" value="<?php echo $my_name; ?>">さん</p>
 <!--フォームの作成 通信はPOST通信で-->
@@ -35,3 +44,6 @@
     <input type="hidden" name="language_correct" value="<?php echo $language_correct; ?>">
     <input type="hidden" name="command_correct" value="<?php echo $command_correct; ?>">
 </form>
+</body>
+</html>
+

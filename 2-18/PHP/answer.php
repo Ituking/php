@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="CSS/style3.css">
 <?php 
 //[question.php]から送られてきた名前の変数、選択した回答、問題の答えの変数を作成
 $my_name = $_POST["my_name"];
@@ -19,19 +18,31 @@ function result($x, $y) {
     }
 }
 ?>
-<p><!--POST通信で送られてきた名前を表示--><?php echo $_POST["my_name"]; ?>さんの結果は・・・？</p>
-<p>①の答え</p>
-<!--作成した関数を呼び出して結果を表示-->
-<?php 
-    result($port, $what_number_correct);
-?>
-<p>②の答え</p>
-<!--作成した関数を呼び出して結果を表示-->
-<?php
-    result($language, $language_correct);
-?>
-<p>③の答え</p>
-<!--作成した関数を呼び出して結果を表示-->
-<?php
-    result($command, $command_correct);
-?>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>答え</title>
+    <link rel="stylesheet" href="CSS/answer.css">
+</head>
+<body>
+    <p><!--POST通信で送られてきた名前を表示--><?php echo $_POST["my_name"]; ?>さんの結果は・・・？</p>
+    <p>①の答え</p>
+    <!--作成した関数を呼び出して結果を表示-->
+    <?php 
+        result($port, $what_number_correct);
+    ?>
+    <p>②の答え</p>
+    <!--作成した関数を呼び出して結果を表示-->
+    <?php
+        result($language, $language_correct);
+    ?>
+    <p>③の答え</p>
+    <!--作成した関数を呼び出して結果を表示-->
+    <?php
+        result($command, $command_correct);
+    ?>
+</body>
+</html>
