@@ -1,0 +1,8 @@
+body {
+    background-color: gray;
+}
+
+p, h2 {
+    color: white;
+    font-family: YuMincho;
+}
