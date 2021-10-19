@@ -1,8 +1,17 @@
 body {
     background-color: gray;
+    color: white;
+    font-family: YuMincho;
+    text-align: center;
 }
 
 h1 {
-    color: white;
-    font-family: YuMincho;
+    border-bottom: solid;
 }
+
+form {
+    margin-top: 50px;
+}
+
+
+

@@ -1,8 +1,6 @@
 body {
     background-color: gray;
-}
-
-p {
     color: white;
     font-family: YuMincho;
+    text-align: center;
 }
