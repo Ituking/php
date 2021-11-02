@@ -45,7 +45,7 @@ function getName($list) {
 //配列の中の名前を出す。
     foreach ($list as $key => $member) {
         if ($i < count($list)) {
-            echo $key[0] . '<br>';
+            echo $key. '<br>';
         }
         $i++;
     }

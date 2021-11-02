@@ -1,15 +1,10 @@
 <?php
-require 'lib/password.php';
 // セッション開始
 session_start();
-include_once("dbInfo.php");
 
 // エラーメッセージ、登録完了メッセージの初期化
 $errorMessage = "";
 $signUpMessage = "";
-
-// セッション開始
-session_start();
 
 // ログインボタンが押された場合
 if (isset($_POST["signUp"])) {
@@ -43,7 +38,7 @@ if (isset($_POST["signUp"])) {
         } catch (PDOException $e) {
             $errorMessage = 'データベースエラー';
             // $e->getMessage() でエラー内容を参照可能（デバック時のみ表示）
-            // echo $e->getMessage();
+            echo $e->getMessage();
         }
     } else if ($_POST["password"] != $_POST["password2"]) {
         $errorMessage = 'パスワードに誤りがあります。';
