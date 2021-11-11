@@ -1,0 +1,29 @@
+body {
+    width: 1000px;
+}
+
+.header-left {
+    height: 120px;
+    width: 200px;
+    background-color: #add8e6;
+}
+
+.header-right {
+    float: left;
+    height: 120px;
+    width: 800px;
+}
+
+.up {
+    background-color: #87ceeb;
+}
+
+.bottom {
+    background-color: #00ffff;
+}
+
+.footer {
+    height: 50px;
+    width: 1000px;
+    background-color: #00ced1;
+}
