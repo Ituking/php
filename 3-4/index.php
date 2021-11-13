@@ -10,22 +10,20 @@
 <body>
     <div class="header">
         <div class="header-left">
-            <img src="1599315827_logo.png">
+            <img class="header-left-image" src="image/logo.png">
         </div>
         <div class="header-right">
-            <div class="up">
+            <div class="header-right-top">
 
             </div>
-            <div class="bottom">
+            <div class="header-right-bottom">
 
             </div>
         </div>
     </div>
-    <div class="main">
-
-    </div>
-    <div class="footer">
-
-    </div>
+    <!-- 記事一覧ページを作成し、action.phpに送る -->
+    <form action="action.php" method="POST">
+        
+    </form>
 </body>
 </html>
