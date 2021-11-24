@@ -87,7 +87,7 @@
                 // ループ文を使用して、1行ずつ読み込んで$rowに代入する
                 // 読み込むものがなくなったらループ終了
                 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                    echo $row["id"].$row["title"].$row["comment"].$row["created"];
+                    echo $row["id"].$row["title"].$row["category"].$row["comment"].$row["created"];
                     echo "<br>";
                 }
             } catch (PDOException $e) {
