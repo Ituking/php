@@ -37,22 +37,15 @@
     margin: 10px 0;
   }
 
-  .main-top {
+  .main-title {
     background-color: #87ceeb;
   }
 
-  .main-top p {
-    /* float: left; */
-
+  .main-title p {
+    margin: 0px auto;
   }
-
-  .main-bottom {
+  .main-posts {
     background-color: #e0fffe;
-  }
-
-  .main-bottom p {
-    padding: 10px 0;
-    text-align: center;
   }
 
   .footer {

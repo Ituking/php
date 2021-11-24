@@ -67,15 +67,14 @@
         </div>
     </div>
     <div class="main">
-        <div class="main-top">
+        <div class="main-title">
             <p>記事ID タイトル カテゴリ 本文 投稿日</p>
-            <br>
         </div>
-        <div class="main-bottom">
-            <p><?php 
+        <div class="main-posts">
+        <p><?php 
             // 作成したgetData.phpを読み込む
             require_once("getData.php");
-
+            
             // 実行したいSQL文を準備
             $sql = "select * from posts order by id desc";
             // 関数db_connect()からPDOを取得する
@@ -96,7 +95,7 @@
                 die();
             }
             ?></p>
-        </div>
+        </div>        
     </div>  
 </body>
 <div class="footer"><a>Y&I group.inc</a></div>
