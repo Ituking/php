@@ -33,19 +33,26 @@
     float: right;
   }
 
-  .main {
+  /* .main {
     margin: 10px 0;
-  }
+  } */
 
   .main-title {
     background-color: #87ceeb;
+    width: 100%;
+    text-align: center;
+    border-bottom: solid 3px white;
   }
 
-  .main-title p {
+  /* .main-title p {
     margin: 0px auto;
-  }
+  } */
+
   .main-posts {
     background-color: #e0fffe;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .footer {

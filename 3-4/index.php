@@ -15,85 +15,49 @@
         <div class="header-right">
             <div class="header-right-top">
                 <p><?php
-                    // 作成したgetData.phpを読み込む
-                    require_once("getData.php");
-                    
-                    // 実行したいSQL文を準備
-                    $sql = "select * from users";
-                    // 関数db_connect()からPDOを取得する
-                    $pdo = db_connect();
-
-                    try {
-                        $stmt = $pdo->prepare($sql);
-                        $stmt->execute();
-                
-                        // ループ文を使用して、1行ずつ読み込んで$rowに代入する
-                        // 読み込むものがなくなったらループ終了
-                        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                            echo "ようこそ ". $row["last_name"]. $row["first_name"]. " さん";
+                    $db = new mysqli("localhost:3306", "root", "root", "checktest4");
+                    $users = $db->query("select * from users");
+                    if ($users) {
+                        while ($user = $users->fetch_assoc()) {
+                            echo "ようこそ ". $user["last_name"]. $user["first_name"]. " さん";
                         }
-                    } catch (PDOException $e) {
-                        echo "ERROR:". $e->getMessage();
-                        die();
+                    } else {
+                        echo $db->error;
                     }
                 ?></p>
                          
             </div>
             <div class="header-right-bottom">
                 <p><?php 
-                    // 作成したgetData.phpを読み込む
-                    require_once("getData.php");
-                    
-                    // 実行したいSQL文を準備
-                    $sql = "select * from users";
-                    // 関数db_connect()からPDOを取得する
-                    $pdo = db_connect();
-
-                    try {
-                        $stmt = $pdo->prepare($sql);
-                        $stmt->execute();
-                
-                        // ループ文を使用して、1行ずつ読み込んで$rowに代入する
-                        // 読み込むものがなくなったらループ終了
-                        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                            echo "最終ログイン日 : ". $row["last_login"];
+                    $db = new mysqli("localhost:3306", "root", "root", "checktest4");
+                    $users = $db->query("select * from users");
+                    if ($users) {
+                        while ($user = $users->fetch_assoc()) {
+                            echo "最終ログイン日 : ". $user["last_login"];
                         }
-                    } catch (PDOException $e) {
-                        echo "ERROR:". $e->getMessage();
-                        die();
-                    }    
+                    } else {
+                        echo $db->error;
+                    }
                 ?></p>
             </div>
         </div>
     </div>
     <div class="main">
-        <div class="main-title">
-            <p>記事ID タイトル カテゴリ 本文 投稿日</p>
-        </div>
         <div class="main-posts">
-        <p><?php 
-            // 作成したgetData.phpを読み込む
-            require_once("getData.php");
-            
-            // 実行したいSQL文を準備
-            $sql = "select * from posts order by id desc";
-            // 関数db_connect()からPDOを取得する
-            $pdo = db_connect();
-
-            try {
-                $stmt = $pdo->prepare($sql);
-                $stmt->execute();
-
-                // ループ文を使用して、1行ずつ読み込んで$rowに代入する
-                // 読み込むものがなくなったらループ終了
-                while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                    echo $row["id"].$row["title"].$row["category"].$row["comment"].$row["created"];
-                    echo "<br>";
+        <div class="main-title">
+            <p>記事ID タイトル カテゴリ 本文 投稿日</p><br>
+        </div>
+            <p><?php 
+                $db = new mysqli("localhost:3306", "root", "root", "checktest4");
+                $posts = $db->query("select * from posts order by id desc");
+                if ($posts) {
+                    while ($post = $posts->fetch_assoc()) {
+                        echo $post["id"]. $post["title"]. $post["category"]. $post["comment"]. $post["created"];
+                        echo "<br>";
+                    }
+                } else {
+                    echo $db->error;
                 }
-            } catch (PDOException $e) {
-                echo "ERROR:". $e->getMessage();
-                die();
-            }
             ?></p>
         </div>        
     </div>  
