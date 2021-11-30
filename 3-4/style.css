@@ -37,12 +37,10 @@
     margin: 10px 0;
   } */
 
-  .main-title {
+  /* .main-title {
     background-color: #87ceeb;
-    width: 100%;
-    text-align: center;
     border-bottom: solid 3px white;
-  }
+  } */
 
   /* .main-title p {
     margin: 0px auto;
@@ -60,4 +58,13 @@
     background-color: #00ced1;
   }
   
+  .main table {
+    background-color: #87ceeb;
+    width: 75%;
+    text-align: center;
+    border-color: white;
+    border-collapse: collapse;
+    margin-right: auto;
+    margin-left: auto;
+  }
 

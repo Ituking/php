@@ -43,10 +43,16 @@
         </div>
     </div>
     <div class="main">
+        <table border = "1">
+            <div class="main-title">
+                <th>記事ID</th>
+                <th>タイトル</th>
+                <th>カテゴリ</th>
+                <th>本文</th>
+                <th>投稿日</th><br>
+            </div>
+        </table>
         <div class="main-posts">
-        <div class="main-title">
-            <p>記事ID タイトル カテゴリ 本文 投稿日</p><br>
-        </div>
             <p><?php 
                 $db = new mysqli("localhost:3306", "root", "root", "checktest4");
                 $posts = $db->query("select * from posts order by id desc");
@@ -58,7 +64,7 @@
                 } else {
                     echo $db->error;
                 }
-            ?></p>
+            ?></p>  
         </div>        
     </div>  
 </body>
