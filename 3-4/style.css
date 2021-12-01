@@ -60,10 +60,13 @@
     background-color: #e0fffe;
     width: 75%;
     text-align: center;
-    border-color: white;
-    border-collapse: collapse;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  table.main-posts #text td {
+    border-color: white;
+    border-collapse: collapse;
   }
 
   .footer {
