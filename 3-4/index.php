@@ -43,29 +43,27 @@
         </div>
     </div>
     <div class="main">
-        <table border = "1">
-            <div class="main-title">
+        <table class = "main-title" border = "1">
                 <th>記事ID</th>
                 <th>タイトル</th>
                 <th>カテゴリ</th>
                 <th>本文</th>
                 <th>投稿日</th><br>
-            </div>
         </table>
-        <div class="main-posts">
-            <p><?php 
-                $db = new mysqli("localhost:3306", "root", "root", "checktest4");
-                $posts = $db->query("select * from posts order by id desc");
-                if ($posts) {
-                    while ($post = $posts->fetch_assoc()) {
-                        echo $post["id"]. $post["title"]. $post["category"]. $post["comment"]. $post["created"];
-                        echo "<br>";
+        <table class = "main-posts" border = "1">
+                <td><?php 
+                    $db = new mysqli("localhost:3306", "root", "root", "checktest4");
+                    $posts = $db->query("select * from posts order by id desc");
+                    if ($posts) {
+                        while ($post = $posts->fetch_assoc()) {
+                            echo $post["id"]. $post["title"]. $post["category"]. $post["comment"]. $post["created"];
+                            echo "<br>";
+                        }
+                    } else {
+                        echo $db->error;
                     }
-                } else {
-                    echo $db->error;
-                }
-            ?></p>  
-        </div>        
+                ?></td>
+        </table>       
     </div>  
 </body>
 <div class="footer"><a>Y&I group.inc</a></div>
