@@ -48,21 +48,20 @@
                 <th>タイトル</th>
                 <th>カテゴリ</th>
                 <th>本文</th>
-                <th>投稿日</th><br>
+                <th>投稿日</th>
         </table>
         <table class = "main-posts" border = "1">
-                <td><?php 
+                <?php 
                     $db = new mysqli("localhost:3306", "root", "root", "checktest4");
                     $posts = $db->query("select * from posts order by id desc");
                     if ($posts) {
                         while ($post = $posts->fetch_assoc()) {
-                            echo $post["id"]. $post["title"]. $post["category"]. $post["comment"]. $post["created"];
-                            echo "<br>";
+                            echo "<td>{$post["id"]}</td>". "<td>{$post["title"]}</td>". "<td>{$post["category"]}</td>". "<td>{$post["comment"]}</td>". "<td>{$post["created"]}</td>";
                         }
                     } else {
                         echo $db->error;
                     }
-                ?></td>
+                ?>
         </table>       
     </div>  
 </body>

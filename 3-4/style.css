@@ -33,9 +33,9 @@
     float: right;
   }
 
-  /* .main {
-    margin: 10px 0;
-  } */
+  .main {
+    padding: 10px 0;
+  }
 
   /* .main-title {
     background-color: #87ceeb;
@@ -60,14 +60,16 @@
     background-color: #e0fffe;
     width: 75%;
     text-align: center;
+    border-color: white;
+    border-collapse: collapse;
     margin-left: auto;
     margin-right: auto;
   }
 
-  table.main-posts #text td {
+  /* table.main-posts #text td {
     border-color: white;
     border-collapse: collapse;
-  }
+  } */
 
   .footer {
     height: 50px;
