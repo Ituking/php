@@ -49,21 +49,87 @@
   table.main-title {
     background-color: #87ceeb;
     width: 75%;
-    text-align: center;
+    text-align: left;
     border-color: white;
     border-collapse: collapse;
     margin-right: auto;
     margin-left: auto;
+    table-layout: fixed;
   }
   
-  table.main-posts {
+  table.main-posts1 {
     background-color: #e0fffe;
     width: 75%;
-    text-align: center;
+    text-align: left;
     border-color: white;
     border-collapse: collapse;
     margin-left: auto;
     margin-right: auto;
+    table-layout: fixed;
+  }
+
+  table.main-posts1 td {
+    table-layout: fixed;
+  }
+
+  table.main-posts2 {
+    background-color: #e0fffe;
+    width: 75%;
+    text-align: left;
+    border-color: white;
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+    table-layout: fixed;
+  }
+
+  table.main-posts2 td {
+    table-layout: fixed;
+  }
+
+  table.main-posts3 {
+    background-color: #e0fffe;
+    width: 75%;
+    text-align: left;
+    border-color: white;
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+    table-layout: fixed;
+  }
+
+  table.main-posts3 td {
+    table-layout: fixed;
+  }
+
+  table.main-posts4 {
+    background-color: #e0fffe;
+    width: 75%;
+    text-align: left;
+    border-color: white;
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+    table-layout: fixed;
+  }
+
+  table.main-posts4 td {
+    table-layout: fixed;
+  }
+
+  table.main-posts5 {
+    background-color: #e0fffe;
+    width: 75%;
+    text-align: left;
+    border-color: white;
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+    table-layout: fixed;
+  }
+
+  table.main-posts5 td {
+    table-layout: fixed;
   }
 
   /* table.main-posts #text td {

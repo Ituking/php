@@ -44,25 +44,79 @@
     </div>
     <div class="main">
         <table class = "main-title" border = "1">
+            <tr>
                 <th>記事ID</th>
                 <th>タイトル</th>
                 <th>カテゴリ</th>
                 <th>本文</th>
                 <th>投稿日</th>
+            </tr>  
         </table>
-        <table class = "main-posts" border = "1">
+        <table class = "main-posts1" border = "1">
                 <?php 
                     $db = new mysqli("localhost:3306", "root", "root", "checktest4");
-                    $posts = $db->query("select * from posts order by id desc");
+                    $posts = $db->query("select * from posts where id = 5");
                     if ($posts) {
                         while ($post = $posts->fetch_assoc()) {
-                            echo "<td>{$post["id"]}</td>". "<td>{$post["title"]}</td>". "<td>{$post["category"]}</td>". "<td>{$post["comment"]}</td>". "<td>{$post["created"]}</td>";
+                            echo "<tr><td>{$post["id"]}</td><td>{$post["title"]}</td><td>{$post["category"]}</td><td>{$post["comment"]}</td><td>{$post["created"]}</td></tr>";
                         }
                     } else {
                         echo $db->error;
                     }
-                ?>
-        </table>       
+            ?>
+        </table>
+        <table class = "main-posts2" border = "1">
+                <?php 
+                    $db = new mysqli("localhost:3306", "root", "root", "checktest4");
+                    $posts = $db->query("select * from posts where id = 4");
+                    if ($posts) {
+                        while ($post = $posts->fetch_assoc()) {
+                            echo "<tr><td>{$post["id"]}</td><td>{$post["title"]}</td><td>{$post["category"]}</td><td>{$post["comment"]}</td><td>{$post["created"]}</td></tr>";
+                        }
+                    } else {
+                        echo $db->error;
+                    }
+            ?>    
+        </table>
+        <table class = "main-posts3" border = "1">
+                <?php 
+                    $db = new mysqli("localhost:3306", "root", "root", "checktest4");
+                    $posts = $db->query("select * from posts where id = 3");
+                    if ($posts) {
+                        while ($post = $posts->fetch_assoc()) {
+                            echo "<tr><td>{$post["id"]}</td><td>{$post["title"]}</td><td>{$post["category"]}</td><td>{$post["comment"]}</td><td>{$post["created"]}</td></tr>";
+                        }
+                    } else {
+                        echo $db->error;
+                    }
+            ?>    
+        </table>
+        <table class = "main-posts4" border = "1">
+                <?php 
+                    $db = new mysqli("localhost:3306", "root", "root", "checktest4");
+                    $posts = $db->query("select * from posts where id = 2");
+                    if ($posts) {
+                        while ($post = $posts->fetch_assoc()) {
+                            echo "<tr><td>{$post["id"]}</td><td>{$post["title"]}</td><td>{$post["category"]}</td><td>{$post["comment"]}</td><td>{$post["created"]}</td></tr>";
+                        }
+                    } else {
+                        echo $db->error;
+                    }
+            ?>    
+        </table>
+        <table class = "main-posts5" border = "1">
+                <?php 
+                    $db = new mysqli("localhost:3306", "root", "root", "checktest4");
+                    $posts = $db->query("select * from posts where id = 1");
+                    if ($posts) {
+                        while ($post = $posts->fetch_assoc()) {
+                            echo "<tr><td>{$post["id"]}</td><td>{$post["title"]}</td><td>{$post["category"]}</td><td>{$post["comment"]}</td><td>{$post["created"]}</td></tr>";
+                        }
+                    } else {
+                        echo $db->error;
+                    }
+            ?>    
+        </table>
     </div>  
 </body>
 <div class="footer"><a>Y&I group.inc</a></div>
