@@ -44,11 +44,15 @@
                           <tr>
                             <td><?php echo $c["id"] ?></td>
                             <td><?php echo $c["title"] ?></td>
-                            <td><?php foreach ($category["category_no"] as $d) {
-                                if ($category["category_no"] == $category) {
-                                    echo $d;
-                                }
-                            } ?></td>
+                            <td><?php 
+                                if ($category["category_no"] == 1) {
+                                    echo "食事";
+                                } elseif ($category["category_no"] == 2) {
+                                    echo "旅行";
+                                } else {
+                                    echo "その他";
+                                } ?>
+                            </td>
                             <td><?php echo $c["comment"] ?></td>
                             <td><?php echo $c["created"] ?></td>
                         </tr>
