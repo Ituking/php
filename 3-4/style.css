@@ -1,146 +1,52 @@
-  .header-left {
-    width: 200px;
+.header-left {
     height: 120px;
+    width: 200px;
     background-color: #add8e6;
     float: left;
-  }
+}
 
-  .header-left {
-    float: left;
-  }
-
-  .header-left-image {
+.header-left-image {
+    height: 120px;
     width: 200px;
-  }
+}
 
-  .header-right-top {
-    width: 100%;
+.header-right-top {
     height: 60px;
+    width: 100%;
     background-color: #87ceeb;
-  }
+}
 
-  .header-right-top p {
-    float: right;
-  }
-
-  .header-right-bottom {
-    width: 100%;
+.header-right-bottom {
     height: 60px;
+    width: 100%;
     background-color: #00ffff;
-  }
+}
 
-  .header-right-bottom p {
-    float: right;
-  }
-
-  .main {
-    padding: 10px 0;
-  }
-
-  /* .main-title {
-    background-color: #87ceeb;
-    border-bottom: solid 3px white;
-  } */
-
-  /* .main-title p {
-    margin: 0px auto;
-  } */
-
-  table.main-title {
+.main-title {
     background-color: #87ceeb;
     width: 75%;
-    text-align: left;
-    border-color: white;
-    border-collapse: collapse;
-    margin-right: auto;
     margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}
+
+table {
+    border-color: white;
+    text-align: left;
+    width: 100%;
+    border-collapse: collapse;
     table-layout: fixed;
-  }
-  
-  table.main-posts1 {
-    background-color: #e0fffe;
+}
+
+.main-posts {
+    background-color: #e0ffff;
     width: 75%;
-    text-align: left;
-    border-color: white;
-    border-collapse: collapse;
     margin-left: auto;
     margin-right: auto;
-    table-layout: fixed;
-  }
+    margin-bottom: 10px;
+}
 
-  table.main-posts1 td {
-    table-layout: fixed;
-  }
-
-  table.main-posts2 {
-    background-color: #e0fffe;
-    width: 75%;
-    text-align: left;
-    border-color: white;
-    border-collapse: collapse;
-    margin-left: auto;
-    margin-right: auto;
-    table-layout: fixed;
-  }
-
-  table.main-posts2 td {
-    table-layout: fixed;
-  }
-
-  table.main-posts3 {
-    background-color: #e0fffe;
-    width: 75%;
-    text-align: left;
-    border-color: white;
-    border-collapse: collapse;
-    margin-left: auto;
-    margin-right: auto;
-    table-layout: fixed;
-  }
-
-  table.main-posts3 td {
-    table-layout: fixed;
-  }
-
-  table.main-posts4 {
-    background-color: #e0fffe;
-    width: 75%;
-    text-align: left;
-    border-color: white;
-    border-collapse: collapse;
-    margin-left: auto;
-    margin-right: auto;
-    table-layout: fixed;
-  }
-
-  table.main-posts4 td {
-    table-layout: fixed;
-  }
-
-  table.main-posts5 {
-    background-color: #e0fffe;
-    width: 75%;
-    text-align: left;
-    border-color: white;
-    border-collapse: collapse;
-    margin-left: auto;
-    margin-right: auto;
-    table-layout: fixed;
-  }
-
-  table.main-posts5 td {
-    table-layout: fixed;
-  }
-
-  /* table.main-posts #text td {
-    border-color: white;
-    border-collapse: collapse;
-  } */
-
-  .footer {
-    height: 50px;
+.footer {
     background-color: #00ced1;
-  }
-  
-  
-
+    height: 50px;
+}
