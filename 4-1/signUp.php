@@ -8,6 +8,7 @@ if (isset($_POST["signUp"])) {
     $pdh = new PDO(PDO_DSN, DB_USERNAME, DB_PASSWORD);
     try {
         // SQL文の準備 FILL_IN
+        $userName = $_POST["name"];
         $sql = "insert into users (name, password) values ($userName, $userPassword)"; 
         // パスワードをハッシュ化
         $userPassword = $_POST["password"];
