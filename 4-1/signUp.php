@@ -26,7 +26,7 @@ if (isset($_POST["signUp"])) {
             echo "登録が完了しました。";
         }catch (PDOException $e) {
             // エラーメッセージの出力 FILL_IN
-            echo "登録が完了していません。";
+            echo $e->getMessage();
             // 終了 FILL_IN
             die();
         }  
@@ -45,7 +45,7 @@ if (isset($_POST["signUp"])) {
 </head>
 <body>
 <h1>新規登録</h1>
-<form method="POST" action="main.php">
+<form method="POST" action="">
 user:<br>
 <input type="text" name="name" id="name">
 <br>
