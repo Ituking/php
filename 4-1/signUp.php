@@ -11,10 +11,10 @@ if (isset($_POST["signUp"])) {
         try {
             // SQL文の準備 FILL_IN
             $userName = $_POST["name"];
-            $sql = "insert into users (name, password) values ($userName, $userPassword)"; 
             // パスワードをハッシュ化
             $userPassword = $_POST["password"];
             $password_hash = password_hash($userPassword, PASSWORD_DEFAULT);
+            $sql = "insert into users (name, password) values ($userName, $userPassword)"; 
             // プリペアドステートメントの作成 FILL_IN
             $stmt = $pdo->prepare($sql);
             // 値をセット FILL_IN
