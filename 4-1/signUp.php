@@ -6,15 +6,13 @@ require ("db_connect.php");
 if (isset($_POST["signUp"])) {
     // nameとpassword両方送られてきたら処理実行
     if (isset($_POST["name"]) && isset($_POST["password"])) {
-        // PDOのインスタンスを取得FILL_IN
-        $pdh = new PDO(PDO_DSN, DB_USERNAME, DB_PASSWORD);
         try {
             // SQL文の準備 FILL_IN
             $userName = $_POST["name"];
             // パスワードをハッシュ化
             $userPassword = $_POST["password"];
             $password_hash = password_hash($userPassword, PASSWORD_DEFAULT);
-            $sql = "insert into users (name, password) values ($userName, $userPassword)"; 
+            $sql = "insert into users (name, password) values (:name, :password)"; 
             // プリペアドステートメントの作成 FILL_IN
             $stmt = $pdo->prepare($sql);
             // 値をセット FILL_IN

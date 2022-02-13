@@ -18,5 +18,7 @@
         }
     }
     
+    // PDOのインスタンスを取得FILL_IN
+    $pdh = new PDO(PDO_DSN, DB_USERNAME, DB_PASSWORD);
     $pdo = db_connect();
 ?>
