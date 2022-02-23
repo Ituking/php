@@ -17,17 +17,17 @@ if (!empty($_POST)) {
         echo 'コンテンツが未入力です。';
     }
 
-    if (isset($_SESSION["title"]) && isset($_SESSION["content"])) {
+    if (!empty($_POST["title"]) && !empty($_POST["content"])) {
         // 入力したtitleとcontentを格納
-        $_SESSION['post_title'] = $row['title'];
-        $_SESSION['post_content'] = $row['content'];
+        $title = $_POST['title'];
+        $content = $_POST['content'];
 
         // PDOのインスタンスを取得
-        $pdo = new PDO(PDO_DSN, DB_USERNAME, DB_PASSWORD);
+        $pdo = db_connect();
 
         try {
             // SQL文の準備
-            $sql = "insert into posts (title, content) values (:title, :content)";
+            $sql = "insert into `posts` (`title`, `content`) values (:title, :content)";
             // プリペアドステートメントの準備
             $stmt = $pdo->prepare($sql);
             // タイトルをバインド

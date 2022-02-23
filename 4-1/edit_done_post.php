@@ -8,9 +8,11 @@ require_once('function.php');
 // ログインしていなければ、login.phpにリダイレクト
 check_user_logged_in();
 
-$id = $_POST["id"];
-$title = $_POST["title"];
-$content = $_POST["content"];
+if (!empty($_POST['id']) && !empty($_POST['title']) && !empty($_POST['content'])) {
+    $id = $_POST["id"];
+    $title = $_POST["title"];
+    $content = $_POST["content"];
+}
 
 // PDOのインスタンスを取得
 $pdo = db_connect();
