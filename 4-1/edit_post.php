@@ -23,14 +23,14 @@ $title = $row['title'];
 $content = $row['content'];
 
 // 結果が1行取得できたら
-// if ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-//     $id = $row['id'];
-//     $title = $row['title'];
-//     $content = $row['content'];
-// } else {
-//     // 対象のidでレコードがない => 不正な画面遷移
-//     echo "対象のデータがありません。";
-// }
+if ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+    $id = $row['id'];
+    $title = $row['title'];
+    $content = $row['content'];
+} else {
+    // 対象のidでレコードがない => 不正な画面遷移
+    echo "対象のデータがありません。";
+}
 ?>
 <!DOCTYPE html>
 <html>
