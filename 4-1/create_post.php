@@ -27,7 +27,7 @@ if (!empty($_POST)) {
 
         try {
             // SQL文の準備
-            $sql = "insert into `posts` (`title`, `content`) values (:title, :content)";
+            $sql = "insert into posts (title, content) values (:title, :content)";
             // プリペアドステートメントの準備
             $stmt = $pdo->prepare($sql);
             // タイトルをバインド

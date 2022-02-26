@@ -28,7 +28,7 @@ if (!empty($_POST)) {
 
         try { 
             // SQL文の準備
-            $sql = "insert into `comments` (`post_id`, `name`, `content`) values (:post_id, :name, :content)";  
+            $sql = "insert into comments (post_id, name, content) values (:post_id, :name, :content)";  
             // プリペアドステートメントの準備 
             $stmt = $pdo->prepare($sql);
             // post_idをバインド 
@@ -51,12 +51,16 @@ if (!empty($_POST)) {
     }
     } else {
         // POSTで渡されたデータがなかった場合
-        if (!empty($_POST['post_id'])) {
             // GETで渡されたpost_idを受け取る 
-            $post_id = $_GET['post_id']; 
+            $post_id = $_GET['post_id'];
             // $post_idが空だった場合は不正な遷移なので、main.phpに戻す
             redirect_main_unless_parameter($post_id);
-        }
+           
+}
+if (isset($post_id)) {
+    echo "A";
+} else {
+    echo "B";
 }
 ?>
 <!DOCTYPE html>
