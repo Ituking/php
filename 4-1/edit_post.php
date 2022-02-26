@@ -17,6 +17,16 @@ redirect_main_unless_parameter($id);
 $pdo = db_connect();
 
 $row = find_post_by_id($id);
+// 値が入っているか確認
+if (isset($row)) {
+    echo "A";
+} else {
+    echo "B";
+}
+
+// find_post_by_id()の返り値が正しく返ってきているのか確認
+var_dump($row);
+
 // 関数から取得した値を格納
 $id = $row['id'];
 $title = $row['title'];
