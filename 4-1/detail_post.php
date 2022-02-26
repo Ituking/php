@@ -40,11 +40,13 @@ try {
 }
 
 // 結果が1行取得できたら
-while ($row = $stmt_comments->fetch(PDO::FETCH_ASSOC)) {
-    echo '<hr>';
-    echo $row['name'];
-    echo '<br />';
-    echo $row['content'];
+if ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+    $id = $row['id'];
+    $title = $row['title'];
+    $content = $row['content'];
+} else {
+    // 対象のidでレコードがない => 不正な画面遷移
+    echo "対象のデータがありません。";
 }
 ?>
 <!DOCTYPE html>

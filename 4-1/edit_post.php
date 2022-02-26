@@ -17,30 +17,12 @@ redirect_main_unless_parameter($id);
 $pdo = db_connect();
 
 $row = find_post_by_id($id);
-// 値が入っているか確認
-if (isset($row)) {
-    echo "A";
-} else {
-    echo "B";
-}
-
-// find_post_by_id()の返り値が正しく返ってきているのか確認
-var_dump($row);
 
 // 関数から取得した値を格納
 $id = $row['id'];
 $title = $row['title'];
 $content = $row['content'];
 
-// 結果が1行取得できたら
-if ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-    $id = $row['id'];
-    $title = $row['title'];
-    $content = $row['content'];
-} else {
-    // 対象のidでレコードがない => 不正な画面遷移
-    echo "対象のデータがありません。";
-}
 ?>
 <!DOCTYPE html>
 <html>
