@@ -39,8 +39,8 @@ if (!empty($_POST)) {
             $stmt->bindParam(':content', $content);
             // 実行 
             $stmt->execute();
-            // 対象のpost_idのdetail_post.phpにリダイレクト
-            header("Location: detail_post.php?id=".$post_id);
+            // // 対象のpost_idのdetail_post.phpにリダイレクト
+            // header("Location: detail_post.php?id=".$post_id);
             exit; 
         } catch (PDOException $e) {
             // エラーメッセージの出力
