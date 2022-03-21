@@ -57,11 +57,7 @@ if (!empty($_POST)) {
             redirect_main_unless_parameter($post_id);
            
 }
-if (isset($post_id)) {
-    echo "A";
-} else {
-    echo "B";
-}
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -72,12 +68,12 @@ if (isset($post_id)) {
 </head>
 <body>
 <h1>コメント</h1> 
-<form method="POST" action="">
+<form method="POST" action="detail_post.php">
 <input type="hidden" name="post_id" value="<?php echo $post_id; ?>">
 投稿者名:<br> 
-<input type="text" name="name"> <br> 
+<input type="text" name="name" value="<?php echo $name; ?>"><br> 
 コメント:<br>
-<input type="text" name="content" style="width:200px;height:100px;"><br> 
+<input type="text" name="content" value="<?php echo $content; ?>" style="width:200px;height:100px;"><br> 
 <input type="submit" value="submit">
 </form>
 <a href="detail_post.php?id=<?php echo $post_id; ?>">記事詳細に戻る</a>

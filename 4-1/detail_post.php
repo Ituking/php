@@ -61,7 +61,7 @@ try {
                 <td></td>
             </tr>
             <tr>
-                <td></td>
+                <td><?php ?></td>
             </tr>
         </table>
         <a href="create_comment.php?post_id=<?php echo $id ?>">この記事にコメントする</a><br />
