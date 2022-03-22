@@ -31,11 +31,11 @@ if (!empty($_POST)) {
             $sql = "insert into comments (post_id, name, content) values (:post_id, :name, :content)";  
             // プリペアドステートメントの準備 
             $stmt = $pdo->prepare($sql);
-            // post_idをバインド 
+            // // post_idをバインド 
             $stmt->bindParam(':post_id', $post_id);
-            // nameをバインド
+            // // nameをバインド
             $stmt->bindParam(':name', $name);    
-            // contentをバインド 
+            // // contentをバインド 
             $stmt->bindParam(':content', $content);
             // 実行 
             $stmt->execute();
@@ -51,11 +51,10 @@ if (!empty($_POST)) {
     }
     } else {
         // POSTで渡されたデータがなかった場合
-            // GETで渡されたpost_idを受け取る 
-            $post_id = $_GET['post_id'];
-            // $post_idが空だった場合は不正な遷移なので、main.phpに戻す
-            redirect_main_unless_parameter($post_id);
-           
+        // GETで渡されたpost_idを受け取る 
+        $post_id = $_GET['post_id'];
+        // $post_idが空だった場合は不正な遷移なので、main.phpに戻す
+        redirect_main_unless_parameter($post_id);       
 }
 
 ?>
@@ -71,9 +70,9 @@ if (!empty($_POST)) {
 <form method="POST" action="detail_post.php">
 <input type="hidden" name="post_id" value="<?php echo $post_id; ?>">
 投稿者名:<br> 
-<input type="text" name="name" value="<?php echo $name; ?>"><br> 
+<input type="text" name="name"><br> 
 コメント:<br>
-<input type="text" name="content" value="<?php echo $content; ?>" style="width:200px;height:100px;"><br> 
+<input type="text" name="content" style="width:200px;height:100px;"><br> 
 <input type="submit" value="submit">
 </form>
 <a href="detail_post.php?id=<?php echo $post_id; ?>">記事詳細に戻る</a>

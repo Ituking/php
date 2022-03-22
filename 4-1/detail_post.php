@@ -22,23 +22,25 @@ $pdo = db_connect();
 
 // postテーブルのidを取得する
 $a = find_post_by_id($id);
-// var_dump($a);
+// postテーブルのtitleを取得する
+// $b = find_post_by_title($title);
 
 try {
     // SQL文の準備
-    $sql = "SELECT * FROM comments WHERE post_id = :post_id";
+    $sql_comments = "SELECT * FROM comments WHERE post_id = :post_id";
     // プリペアドステートメントの作成
-    $stmt = $pdo->prepare($sql);
+    $stmt_comments = $pdo->prepare($sql_comments);
     // idのバインド
-    $stmt->bindParam(':post_id', $id);
+    $stmt_comments->bindParam(':post_id', $id);
     // 実行
-    $stmt->execute();
+    $stmt_comments->execute();
 } catch (PDOException $e) {
     // エラーメッセージの出力
     echo 'Error: ' . $e->getMessage();
     // 終了
     die();
 }
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -54,7 +56,7 @@ try {
             </tr>
             <tr>
                 <td>タイトル</td>
-                <td></td>
+                <td><?php echo $title; ?></td>
             </tr>
             <tr>
                 <td>本文</td>
@@ -66,5 +68,16 @@ try {
         </table>
         <a href="create_comment.php?post_id=<?php echo $id ?>">この記事にコメントする</a><br />
         <a href="main.php">メインページに戻る</a>
+        <div>
+        <?php 
+        // 結果が1行取得できたら
+        while ($row = $stmt_comments->fetch(PDO::FETCH_ASSOC)) {
+            echo '<hr>';
+            echo $row['name'];
+            echo '<br />';
+            echo $row['content'];
+        }
+        ?>
+        </div>
     </body>
 </html>
