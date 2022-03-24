@@ -19,8 +19,6 @@ $pdo = db_connect();
 
 // postテーブルのidを取得する
 $a = find_post_by_id($id);
-// postテーブルのtitleを取得する
-// $b = find_post_by_title($title);
 
 try {
     // SQL文の準備
@@ -53,14 +51,11 @@ try {
             </tr>
             <tr>
                 <td>タイトル</td>
-                <td><?php echo $title; ?></td>
+                <td><?php echo $a['title']; ?></td>
             </tr>
             <tr>
                 <td>本文</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td><?php ?></td>
+                <td><?php echo $a['content']; ?></td>
             </tr>
         </table>
         <a href="create_comment.php?post_id=<?php echo $id ?>">この記事にコメントする</a><br />
