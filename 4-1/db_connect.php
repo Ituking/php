@@ -11,7 +11,6 @@
             // エラー処理方法の設定
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             return $pdo;
-            echo "データベースと接続しました。";
         } catch(PDOException $e) {
             echo 'Error: ' . $e->getMessage();
             die();

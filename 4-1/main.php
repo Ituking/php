@@ -42,9 +42,6 @@ try {
         <td>タイトル</td>
         <td>本文</td>
         <td>投稿日</td>
-        <td></td>
-        <td></td>
-        <td></td>
     </tr>
     <?php while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) { ?>
         <tr>
@@ -58,6 +55,5 @@ try {
         </tr>
     <?php } ?>
     </table>
-
 </body>
 </html>

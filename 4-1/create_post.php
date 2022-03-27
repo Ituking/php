@@ -19,8 +19,9 @@ if (!empty($_POST)) {
 
     if (!empty($_POST["title"]) && !empty($_POST["content"])) {
         // 入力したtitleとcontentを格納
-        $title = $_POST['title'];
-        $content = $_POST['content'];
+        //記事のタイトル名と本文のエスケープ処理
+        $title = htmlspecialchars($_POST['title'], ENT_QUOTES);
+        $content = htmlspecialchars($_POST['content'], ENT_QUOTES);
 
         // PDOのインスタンスを取得
         $pdo = db_connect();
@@ -31,9 +32,9 @@ if (!empty($_POST)) {
             // プリペアドステートメントの準備
             $stmt = $pdo->prepare($sql);
             // タイトルをバインド
-            $stmt->bindParam(':title', $title);
+            $stmt->bindParam('title', $title);
             // 本文をバインド
-            $stmt->bindParam(':content', $content);
+            $stmt->bindParam('content', $content);
             // 実行
             $stmt->execute();
             // main.phpにリダイレクト

@@ -10,8 +10,8 @@ if (isset($_POST["signUp"])) {
             // SQL文の準備 FILL_IN
             $userName = $_POST["name"];
             // パスワードをハッシュ化
-            $userPassword = $_POST["password"];
-            $password_hash = password_hash($userPassword, PASSWORD_DEFAULT);
+            $password = $_POST["password"];
+            $password_hash = password_hash($password, PASSWORD_DEFAULT);
             $sql = "insert into users (name, password) values (:name, :password)"; 
             // プリペアドステートメントの作成 FILL_IN
             $stmt = $pdo->prepare($sql);
@@ -38,19 +38,18 @@ if (isset($_POST["signUp"])) {
 <!DOCTYPE html>
 <html>
 <head>
-<title></title>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 <body>
-<h1>新規登録</h1>
-<form method="POST" action="">
-user:<br>
-<input type="text" name="name" id="name">
-<br>
-password:<br>
-<input type="password" name="password" id="password"><br>
-<input type="submit" value="submit" id="signUp" name="signUp">
-
-</form>
+    <h1>新規登録</h1>
+    <form method="POST" action="signUp.php">
+        user:<br>
+        <input type="text" name="name" id="name">
+        <br>
+        password:<br>
+        <input type="password" name="password" id="password"><br>
+        <input type="submit" value="submit" id="signUp" name="signUp">
+    </form>
 </body>
 </html>
