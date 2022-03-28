@@ -40,7 +40,7 @@ if (!empty($_POST)) {
             // 実行 
             $stmt->execute();
             // // 対象のpost_idのdetail_post.phpにリダイレクト
-            // header("Location: detail_post.php?id=".$post_id);
+            header("Location: detail_post.php?id=".$post_id);
             exit; 
         } catch (PDOException $e) {
             // エラーメッセージの出力
@@ -67,7 +67,7 @@ if (!empty($_POST)) {
 </head>
 <body>
 <h1>コメント</h1> 
-<form method="POST" action="detail_post.php">
+<form method="POST" action="">
 <input type="hidden" name="post_id" value="<?php echo $post_id; ?>">
 投稿者名:<br> 
 <input type="text" name="name"><br> 

@@ -57,7 +57,7 @@ if (!empty($_POST)) {
 </head>
 <body>
     <h1>記事登録</h1>
-    <form method="POST" action="detail_post.php">
+    <form method="POST" action="">
         title:<br>
         <input type="text" name="title" id="title" style="width:200px;height:50px;">
         <br>
