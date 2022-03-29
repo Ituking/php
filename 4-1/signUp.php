@@ -10,7 +10,7 @@ if (isset($_POST["signUp"])) {
             $userName = $_POST["name"];
             $password = $_POST["password"];
             // SQL文の準備 FILL_IN
-            $sql = "insert into users (name, password) values (name, password)"; 
+            $sql = "insert into users (name, password) values (:name, :password)"; 
             // パスワードをハッシュ化
             $password_hash = password_hash($password, PASSWORD_DEFAULT);
             // プリペアドステートメントの作成 FILL_IN
