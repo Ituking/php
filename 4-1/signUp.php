@@ -7,12 +7,12 @@ if (isset($_POST["signUp"])) {
     // nameとpassword両方送られてきたら処理実行
     if (isset($_POST["name"]) && isset($_POST["password"])) {
         try {
-            // SQL文の準備 FILL_IN
             $userName = $_POST["name"];
-            // パスワードをハッシュ化
             $password = $_POST["password"];
+            // SQL文の準備 FILL_IN
+            $sql = "insert into users (name, password) values (name, password)"; 
+            // パスワードをハッシュ化
             $password_hash = password_hash($password, PASSWORD_DEFAULT);
-            $sql = "insert into users (name, password) values (:name, :password)"; 
             // プリペアドステートメントの作成 FILL_IN
             $stmt = $pdo->prepare($sql);
             // 値をセット FILL_IN
@@ -43,7 +43,7 @@ if (isset($_POST["signUp"])) {
 </head>
 <body>
     <h1>新規登録</h1>
-    <form method="POST" action="signUp.php">
+    <form method="POST" action="">
         user:<br>
         <input type="text" name="name" id="name">
         <br>
