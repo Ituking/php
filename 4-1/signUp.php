@@ -5,7 +5,7 @@ require ("db_connect.php");
 // POSTで送られていれば処理実行
 if (isset($_POST["signUp"])) {
     // nameとpassword両方送られてきたら処理実行
-    if (isset($_POST["name"]) && isset($_POST["password"])) {
+    if ($_POST["name"] && $_POST["password"]) {
         try {
             $userName = $_POST["name"];
             $password = $_POST["password"];
