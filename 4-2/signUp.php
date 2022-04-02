@@ -1,0 +1,51 @@
+<?php
+    // db_connect.phpの読み込み
+    require_once("db_connect.php");
+
+    // POSTで送られていれば処理実行
+    if (isset($_POST["signUp"])) {
+        // nameとpassword両方送られてきたら処理実行
+        if (($_POST["name"]) && ($_POST["password"])) {
+            try {
+                $userName = $_POST["name"];
+                $password = $_POST["password"];
+                // SQL文の準備 FILL_IN
+                $sql = "insert into users (name, password) values (:name, :password)"; 
+                // パスワードをハッシュ化
+                $password_hash = password_hash($password, PASSWORD_DEFAULT);
+                // プリペアドステートメントの作成 FILL_IN
+                $stmt = $pdo->prepare($sql);
+                // 値をセット FILL_IN
+                $stmt->bindParam(":name", $userName);
+                $stmt->bindParam(":password", $password_hash);
+                // 実行 FILL_IN
+                $stmt->execute();
+                // 登録完了メッセージ出力
+                echo "登録が完了しました。";
+            }catch (PDOException $e) {
+                // エラーメッセージの出力 FILL_IN
+                echo $e->getMessage();
+                // 終了 FILL_IN
+                die();
+            }  
+        } else {
+            echo "登録が完了していません。";
+        }
+    }
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<body>
+    <h2>ユーザー登録画面</h2>
+    <form method="POST" action="">
+        <input type="text" name="name" id="name" size="30" placeholder="ユーザー名"><br><br>
+        <input type="password" name="password" id="password" size="30" placeholder="パスワード"><br><br>
+        <input type="submit" value="新規登録" id="signUp" name="signUp">
+    </form>
+</body>
+</html>
