@@ -65,10 +65,13 @@
 <head>
     <title></title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="../CSS/register.css">
 </head>
 <body>
+    <div class="main">
     <h2>本 登録画面</h2>
-    <form method="POST" action="">
+    <div class="information">
+        <form method="POST" action="">
         <input type="text" name="title" id="title" placeholder="タイトル">
         <br>
         <br>
@@ -83,7 +86,9 @@
             <option value="20">20</option>
         </select>
         <br>
-        <input type="submit" value="登録" id="register" name="register">
+    </div>
+    <button type="submit" class="register">登録</button>
     </form>
+    </div>
 </body>
 </html>

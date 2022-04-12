@@ -59,14 +59,22 @@
 <html lang="ja">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="../CSS/login.css">
         <title>ログインページ</title>
     </head>
     <body>
-        <h2>ログイン画面</h2>
+        <div class="header">
+            <h2>ログイン画面</h2>
+            <div class="signup">
+                <form method="post" action="signUp.php">
+                    <button type="submit" class="signup_button">新規ユーザー登録</button>
+                </form>
+            </div>
+        </div>
         <form method="post" action="">
             <input type="text" name="name" size="30" placeholder="ユーザ名"><br><br>
             <input type="password" name="password" size="30" placeholder="パスワード"><br><br>
-            <input type="submit" value="ログイン">
+            <button type="submit" class="login">ログイン</button>
         </form>
     </body>
 </html>       

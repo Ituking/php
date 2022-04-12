@@ -39,13 +39,14 @@
 <head>
     <title></title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="../CSS/signUp.css">
 </head>
 <body>
     <h2>ユーザー登録画面</h2>
     <form method="POST" action="">
         <input type="text" name="name" id="name" size="30" placeholder="ユーザー名"><br><br>
         <input type="password" name="password" id="password" size="30" placeholder="パスワード"><br><br>
-        <input type="submit" value="新規登録" id="signUp" name="signUp">
+        <button type="submit" class="signup">新規登録</button>
     </form>
 </body>
 </html>

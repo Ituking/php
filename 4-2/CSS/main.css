@@ -1,0 +1,95 @@
+.header {
+    display: flex; /* flexbox */
+	flex-wrap: wrap; /* 折返し指定 */
+	gap: 6px 4px; /* 余白 */
+}
+
+.register, .logout, .delete {
+    /* ブラウザ特有のスタイルを無効に */
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+
+  /* 整える */
+  margin: 1em 0; /* 前後の隙間 */
+  padding: 0.6em 1em; /* 塗りの余白 */
+  font-size: 1em; /* フォントサイズ */
+  color: #FFF; /* テキストカラー */
+  cursor: pointer; /* カーソルを指マークに */
+  border-radius: 3px; /* 角の丸み */
+  border: 0; /* 枠線を消す */
+  transition: 0.3s; /* ホバーの変化を滑らかに */
+}
+
+.register {
+    background-color: #1e90ff; /* 背景色 */
+}
+
+.logout {
+    background-color: #696969; /* 背景色 */
+}
+
+.delete {
+    background-color: #dc143c; /* 背景色 */
+}
+
+/* ホバー時（カーソルをのせた時）の見た目 */
+.register:hover {
+    background-color: #064fda; /* 背景色 */
+}
+
+/* ホバー時（カーソルをのせた時）の見た目 */
+.logout:hover {
+    background-color: #c0c0c0; /* 背景色 */
+}
+
+/* ホバー時（カーソルをのせた時）の見た目 */
+.delete:hover {
+    background-color: #8b0000; /* 背景色 */
+}
+
+table {
+    border-collapse: collapse;
+    border: solid 1px #adb3c1;
+    color: #333; /* 全体の文字色 */
+    background-color: #f0f2f7; /* 全体の背景色 */
+    width: 100%; /* 幅 */
+    text-align: center; /* 全テキストを中央寄せ */
+}
+
+th, tr, td {
+    border: solid 1px #333; /* 線の種類 太さ 色 */
+    table-layout: fixed;
+}
+
+th {
+    color: #000000;/* 見出しの文字色 */
+    background-color: #d0ebfd; /* 見出しの背景色 */
+}
+
+/* 500px以下の画面で適用 */
+@media only screen and (max-width: 500px) {
+    table.mobile-scroll {
+        white-space: nowrap; /* 折り返されないように */
+        overflow-x: auto; /* 横スクロール */
+        -webkit-overflow-scrolling: touch; /* スマホでスムーズにスクロールできるように */
+    }
+
+    .mobile-blocky tr,
+    .mobile-blocky th,
+    .mobile-blocky td {
+      display: block; /* セルを縦に */
+      border: none; /* 線をリセット */
+    }
+    /* 以下で線を再設定 */
+    .mobile-blocky {
+      border: solid 2px #a5d1f1;
+      border-top: none;
+    }
+    .mobile-blocky th {
+      border-top: solid 2px #a5d1f1;
+    }
+    .mobile-blocky td {
+      border-top: dashed 1px #a5d1f1;
+    }
+  }

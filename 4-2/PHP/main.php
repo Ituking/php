@@ -26,38 +26,38 @@
 <html>
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="../CSS/main.css">
     <title>メイン</title>
 </head>
 <body>
     <h1>在庫一覧画面</h1>
-    <form action="" method="POST">
-        <input type="submit" value="新規登録" id="register" name="register">
-        <input type="submit" value="ログアウト" id="logout" name="logout">
-    </form><br>
+    <div class="header">
+            <form action="register.php" method="POST">
+                <button type="submit" class="register">新規登録</button>
+            </form><br>
+        <form action="logout.php" method="POST">
+            <button type="submit" class="logout">ログアウト</button>
+        </form>
+    </div>
     <div class="main">
-        <div class="main-title">
             <table>
-            <tr>
-                <td>タイトル</td>
-                <td>発売日</td>
-                <td>在庫数</td>
-                <td></td>
-                <td></td>
-            </tr>    
-            </table>     
-        </div>
-        <div class="information">
-            <table>
+                <tr>
+                    <th class="nowrap">タイトル</th>
+                    <th class="nowrap">発売日</th>
+                    <th class="nowrap">在庫数</th>
+                    <th></th>
+                </tr>        
                 <?php while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) { ?>
                     <tr>
                         <td><?php echo $row['title']; ?></td>
                         <td><?php echo $row['date']; ?></td>
                         <td><?php echo $row['stock']; ?></td>
-                        <td><input type="submit" value="削除" id="delete" name="delete"></td>
+                        <form action="delete_books.php" method="post">
+                        <td><button type="submit" name="delete" onclick="alert('削除しますか？')" class="delete">削除</button></td>
+                        </form>   
                     </tr>
                 <?php } ?>
             </table>
-        </div>
     </div>
 </body>
 </html>
