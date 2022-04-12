@@ -22,7 +22,7 @@ $pdo = db_connect();
 
 try {
     // SQL文の準備
-    $sql = "delete from `books` where `books`.id = :id";
+    $sql = "delete from books (title) values (;title)";
     // プリペアドステートメントの作成
     $stmt = $pdo->prepare($sql);
     // idのバインド
@@ -38,3 +38,16 @@ try {
     // 終了
     die();
 }
+?>
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>削除</title>
+</head>
+    <body>
+     <h1>削除画面</h1>
+    <div>削除しました</div>
+    <a href="main.php">在庫一覧画面に戻る</a>
+    </body>
+</html>
