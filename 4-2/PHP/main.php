@@ -52,9 +52,7 @@
                         <td><?php echo $row['title']; ?></td>
                         <td><?php echo $row['date']; ?></td>
                         <td><?php echo $row['stock']; ?></td>
-                        <form action="delete_books.php" method="post">
-                            <td><button type="submit" name="delete" onclick="alert('削除しますか？')" class="delete">削除</button></td>
-                        </form>   
+                        <td><a href="delete_books.php?id=<?php echo $row['id']; ?>">削除</a></td>  
                     </tr>
                 <?php } ?>
             </table>

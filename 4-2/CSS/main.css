@@ -33,6 +33,15 @@
     background-color: #dc143c; /* 背景色 */
 }
 
+a {
+    color: #FFF;
+    background-color: #d7003a;
+    padding: 10px 20px;
+    display: inline-block;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
 /* ホバー時（カーソルをのせた時）の見た目 */
 .register:hover {
     background-color: #064fda; /* 背景色 */
@@ -44,7 +53,7 @@
 }
 
 /* ホバー時（カーソルをのせた時）の見た目 */
-.delete:hover {
+a:hover {
     background-color: #8b0000; /* 背景色 */
 }
 
