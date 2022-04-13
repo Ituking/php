@@ -19,7 +19,10 @@ if (empty($id)) {
 
 // PDOのインスタンスを取得
 $pdo = db_connect();
+
 if (!empty($_POST)) {
+    // idを格納 
+    $id = $_POST["id"];
     try {
         // SQL文の準備
         $sql = "delete from 'books' where 'books'.'id' = ':id'";
