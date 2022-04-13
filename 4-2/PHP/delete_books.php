@@ -22,7 +22,7 @@ $pdo = db_connect();
 if (!empty($_POST)) {
     try {
         // SQL文の準備
-        $sql = "delete from books where books.id = :id";
+        $sql = "delete from 'books' where 'books'.'id' = ':id'";
         // プリペアドステートメントの作成
         $stmt = $pdo->prepare($sql);
         // idのバインド
