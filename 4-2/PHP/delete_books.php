@@ -44,11 +44,12 @@ if (!empty($_POST)) {
 <html>
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="../CSS/delete_books.css">
     <title>削除</title>
 </head>
     <body>
      <h1>削除画面</h1>
-    <div>削除しました</div>
+    <div>削除しました</div><br>
     <a href="main.php">在庫一覧画面に戻る</a>
     </body>
 </html>

@@ -47,9 +47,36 @@
     border-radius: 3px; /* 角の丸み */
     border: 0; /* 枠線を消す */
     transition: 0.3s; /* ホバーの変化を滑らかに */
-  }
+}
   
-  /* ホバー時（カーソルをのせた時）の見た目 */
-  .login:hover {
-    background-color: #064fda; /* 背景色 */
-  }
+/* ホバー時（カーソルをのせた時）の見た目 */
+.login:hover {
+background-color: #064fda; /* 背景色 */
+}
+
+/* 500px以下の画面で適用 */
+@media only screen and (max-width: 500px) {
+    table.mobile-scroll {
+        white-space: nowrap; /* 折り返されないように */
+        overflow-x: auto; /* 横スクロール */
+        -webkit-overflow-scrolling: touch; /* スマホでスムーズにスクロールできるように */
+    }
+
+    .mobile-blocky tr,
+    .mobile-blocky th,
+    .mobile-blocky td {
+      display: block; /* セルを縦に */
+      border: none; /* 線をリセット */
+    }
+    /* 以下で線を再設定 */
+    .mobile-blocky {
+      border: solid 2px #a5d1f1;
+      border-top: none;
+    }
+    .mobile-blocky th {
+      border-top: solid 2px #a5d1f1;
+    }
+    .mobile-blocky td {
+      border-top: dashed 1px #a5d1f1;
+    }
+}
