@@ -20,12 +20,10 @@ if (empty($id)) {
 // PDOのインスタンスを取得
 $pdo = db_connect();
 
-if (!empty($_POST)) {
-    // idを格納 
-    $id = $_POST["id"];
+if (!empty($_GET['id'])) {
     try {
         // SQL文の準備
-        $sql = "delete from 'books' where 'books'.'id' = ':id'";
+        $sql = "delete from `books` where `books`.`id` = :id";
         // プリペアドステートメントの作成
         $stmt = $pdo->prepare($sql);
         // idのバインド
@@ -34,6 +32,7 @@ if (!empty($_POST)) {
         $stmt->execute();
         // main.phpにリダイレクト
         // header("Location: main.php");
+        echo "削除が完了しました。";
         exit;
     } catch (PDOException $e) {
         // エラーメッセージの出力
@@ -41,7 +40,10 @@ if (!empty($_POST)) {
         // 終了
         die();
     }
-} 
+} else {
+    echo "削除できませんでした。";
+}
+
 ?>
 <!doctype html>
 <html>

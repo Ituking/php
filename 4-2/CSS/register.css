@@ -1,8 +1,3 @@
-.main {
-    width: 80%;
-    margin: 0 auto;
-}
-
 .register {
     /* ブラウザ特有のスタイルを無効に */
   -moz-appearance: none;
