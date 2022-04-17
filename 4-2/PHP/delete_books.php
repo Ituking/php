@@ -31,8 +31,7 @@ if (!empty($_GET['id'])) {
         // 実行
         $stmt->execute();
         // main.phpにリダイレクト
-        // header("Location: main.php");
-        echo "削除が完了しました。";
+        header("Location: main.php");
         exit;
     } catch (PDOException $e) {
         // エラーメッセージの出力
@@ -40,8 +39,6 @@ if (!empty($_GET['id'])) {
         // 終了
         die();
     }
-} else {
-    echo "削除できませんでした。";
 }
 
 ?>
