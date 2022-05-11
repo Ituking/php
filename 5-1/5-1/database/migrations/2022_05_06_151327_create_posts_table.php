@@ -17,7 +17,6 @@ class CreatePostsTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('user_id');
             $table->string('body', 255);
-            $table->timestamp('deleted_at');
             $table->timestamps();
             $table->softDeletes();
         });
