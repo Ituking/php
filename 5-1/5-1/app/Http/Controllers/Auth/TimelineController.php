@@ -25,4 +25,9 @@ class TimelineController extends Controller
         ]);
         return back(); // リクエスト送ったページに戻る（つまり、/timelineにリダイレクトする）
     }
+
+    public function tweetSave() 
+    {
+
+    }
 }
