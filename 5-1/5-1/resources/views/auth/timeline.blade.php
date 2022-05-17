@@ -11,7 +11,7 @@
     </head>
     <body style="height:100%; background-color: #E6ECF0;">
         <div class="wrapper" style="margin: 0 auto; width: 50%; height: 100%; background-color: white;">
-            <form action="/timeline" method="post">
+            <form action="{{ url('/timeline')}}" method="post">
             {{ csrf_field() }}
                 <div style="background-color: #E8F4FA; text-align: center;">
                     <input type="text" name="tweet" style="margin: 1rem; padding: 0 1rem; width: 70%; border-radius: 6px; border: 1px solid #ccc; height: 2.3rem;" placeholder="いまどうしてる？">
