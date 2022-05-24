@@ -11,13 +11,19 @@
 |
 */
 
+use App\Http\Controllers\TimelineController;
+use App\Models\Post;
+
+
 Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+Route::get('/timeline', [TimelineController::class, 'timeline']);
 
-Route::get('/home', 'HomeController@index')->name('home');
-
-Route::get('/timeline', 'Auth\TimelineController@showTimelinePage');   
-Route::post('/timeline', 'Auth\TimelineController@postTweet');    
+Route::get('/tweet', function(){
+    $posts = posts::all();
+    foreach ($posts as $post) {
+        return $post->body;
+    }
+});
