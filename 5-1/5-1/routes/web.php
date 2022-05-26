@@ -12,18 +12,24 @@
 */
 
 use App\Http\Controllers\TimelineController;
-use App\Models\Post;
+use App\Post;
 
-
-Route::get('/', function () {
+Route::get('/', function() {
     return view('welcome');
 });
 
 Route::get('/timeline', [TimelineController::class, 'timeline']);
 
+// Route::get('/timeline', function() {
+//     return view('timeline');
+// });
+
 Route::get('/tweet', function(){
-    $posts = posts::all();
+    $posts = Post::all();
     foreach ($posts as $post) {
         return $post->body;
     }
 });
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
