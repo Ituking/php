@@ -12,6 +12,7 @@
 */
 
 use App\Http\Controllers\TimelineController;
+use App\Http\Controllers\CreateController;
 use App\Post;
 
 Route::get('/', function() {
@@ -33,3 +34,8 @@ Route::get('/tweet', function(){
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::group(['prefix' => 'main', 'middleware' => 'auth'], function() {
+    Route::get('/create', 'Controllers\CreateController@add');
+    Route::post('/create', 'Controllers\CreateController@create');
+});
