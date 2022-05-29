@@ -13,4 +13,9 @@ class CreateController extends Controller
     public function create() {
         return view('create');
     }
+
+    public function message(Request $request) {
+        $request->session()->flash('message', '投稿が完了しました。');
+        return redirect()->route('timeline');
+    }
 }
