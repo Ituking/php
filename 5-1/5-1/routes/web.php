@@ -35,7 +35,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::group(['prefix' => 'main', 'middleware' => 'auth'], function() {
-    Route::get('/create', 'Controllers\CreateController@add');
-    Route::post('/create', 'Controllers\CreateController@create');
+Route::group(['prefix' => 'main'], function() {
+    Route::get('/create', 'Controllers\CreateController@add')->middleware('auth');
+    Route::post('/create', 'Controllers\CreateController@create')->middleware('auth');
+    Route::get('posts', 'Controllers\CreateController@index')->middleware('auth');
 });
